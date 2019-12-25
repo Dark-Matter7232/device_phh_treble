@@ -73,8 +73,8 @@ $rom_script
 
 PRODUCT_NAME := $target
 PRODUCT_DEVICE := phhgsi_${arch}_$part
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Phh-Treble $apps_name
+PRODUCT_BRAND := Realme
+PRODUCT_MODEL := CPH1861
 
 PRODUCT_PACKAGES += $extra_packages
 EOF
