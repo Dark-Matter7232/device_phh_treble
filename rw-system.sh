@@ -6,6 +6,8 @@
 #	debug=1 exec sh -x "$(readlink -f -- "$0")" > /cache/phh/logs 2>&1
 #fi
 
+setprop persist.sys.overlay.devinputjack=true
+
 vndk="$(getprop persist.sys.vndk)"
 [ -z "$vndk" ] && vndk="$(getprop ro.vndk.version |grep -oE '^[0-9]+')"
 setprop sys.usb.ffs.aio_compat true
@@ -194,7 +196,7 @@ if getprop ro.vendor.build.fingerprint | grep -q -i \
     setprop persist.sys.qcom-brightness "$(cat /sys/class/leds/lcd-backlight/max_brightness)"
 fi
 
-if getprop ro.vendor.product.device |grep -iq -e RMX1801 -e RMX1803 -e RMX1807;then	
+if getprop ro.vendor.product.device |grep -iq -e RMX1801 -e RMX1803 -e RMX1807 -e CPH1861 -e CPH1859 -e RMX1827;then	
     setprop persist.sys.qcom-brightness "$(cat /sys/class/leds/lcd-backlight/max_brightness)"
 fi
 
